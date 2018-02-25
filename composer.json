@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Dmitrykozachkov\\LaravelCreateDatabase\\": "./src/"
+            "Dmitrykozachkov\\LaravelCreateDatabase\\": "src/"
         }
     }
 }
