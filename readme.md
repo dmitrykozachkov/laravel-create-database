@@ -1,6 +1,6 @@
 ## About the package
 
-The packege provide create database from artisan.
+The package provide create database from artisan.
 
 ### How to use
 - Configarate .env file
