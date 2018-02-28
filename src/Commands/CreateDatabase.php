@@ -16,14 +16,14 @@ class CreateDatabase extends Command
      *
      * @var string
      */
-    protected $signature = 'db:create {--migrate} {--seed}';
+    protected $signature = 'db:create {--migrate} {--seed} {--passport}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'The command will create database';
+    protected $description = 'The command will create database and migrate, and seeding data, and install passport.';
 
     /**
      * Create a new command instance.
@@ -63,12 +63,27 @@ class CreateDatabase extends Command
         }
 
         if ($this->option('migrate')) {
-            Artisan::call('migrate');
-            $this->line('Migration table created successfully.');
+            if (Artisan::call('migrate') == 0) {
+            	$this->line('Migration table created successfully.');
+        	} else {
+        		$this->error('ERROR: migration is failed!');
+        	}
         }
 
         if ($this->option('seed')) {
-            Artisan::call('db:seed');
+            if (Artisan::call('db:seed') == 0) {
+            	$this->line('Seeding is done.');
+            } else {
+        		$this->error('ERROR: seeding is failed!');
+        	}
+        }
+
+        if ($this->option('passport')) {
+            if (Artisan::call('passport:install') == 0) {
+            	$this->line('Passport data was installed.');
+        	} else {
+        		$this->error('ERROR: passport data installing is failed!');
+        	}
         }
 
         $this->info('Done.');
