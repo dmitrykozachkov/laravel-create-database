@@ -9,7 +9,7 @@
             "email": "dmitrykozachkov@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0.0",
     "require": {},
     "autoload": {
         "psr-4": {
