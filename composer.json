@@ -2,14 +2,14 @@
     "name": "dmitrykozachkov/laravel-create-database",
     "description": "A package to create database from artisan",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "authors": [
         {
             "name": "Dmitry Kozachkov",
             "email": "dmitrykozachkov@gmail.com"
         }
     ],
-    "minimum-stability": "1.0.0",
+    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
