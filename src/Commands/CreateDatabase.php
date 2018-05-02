@@ -60,11 +60,13 @@ class CreateDatabase extends Command
 
     private function createDb()
     {
-        $connection = "${$this->configs['connection']}:host=${$this->configs['host']};port=${$this->configs['port']}";
+        $connection = "{$this->configs['connection']}:host={$this->configs['host']};port={$this->configs['port']}";
 
         $pdo = new PDO($connection, $this->configs['user_name'], $this->configs['password']);
 
-        $sql = "CREATE DATABASE " . env('DB_DATABASE') . " CHARACTER SET utf8 COLLATE utf8_general_ci";
+        $db_name = env('DB_DATABASE');
+
+        $sql = "CREATE DATABASE $db_name CHARACTER SET utf8 COLLATE utf8_general_ci";
 
         $stmt = $pdo->prepare($sql);
 
